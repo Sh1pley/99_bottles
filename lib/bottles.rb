@@ -7,10 +7,7 @@ class Bottles
   def sing_song(num)
     @number_of_lines = num
     num.times do |number|
-      if number > 1
-       puts main_verses
-      else
-       puts final_verse
+      if number > 1 ? main_verses : final_verse
       end
     end
   end
@@ -25,3 +22,4 @@ class Bottles
   # binding.pry
 end
 
+ 
