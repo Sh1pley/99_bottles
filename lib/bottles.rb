@@ -6,7 +6,7 @@ class Bottles
 
   def sing_song(num)
     @number_of_lines = num
-    num.downto(1) do |number|
+    num.times do |number|
       if number > 1
        puts main_verses
       else

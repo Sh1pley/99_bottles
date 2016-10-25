@@ -21,7 +21,7 @@ class BottlesTest < Minitest::Test
 
   def test_it_can_end_the_song
     bottles = Bottles.new
-    bottles.sing_song
-    refute_equal (> 1), bottles.number_of_lines
+    bottles.sing_song(1)
+    refute bottles.number_of_lines > 1
   end
 end
