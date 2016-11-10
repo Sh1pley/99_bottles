@@ -2,24 +2,24 @@ require 'pry'
 
 class Bottles
 
-  attr_reader :number_of_lines
-
-  def sing_song(num)
-    @number_of_lines = num
-    num.times do |number|
-      if number > 1 ? main_verses : final_verse
-      end
-    end
+  def initialize(num = 99)
+    sing_song(num)
   end
 
-  def main_verses
-    "#{@number_of_lines} bottles of beer on the wall, #{@number_of_lines} bottles of beer.\nTake one down and pass it around, #{@number_of_lines - 1} bottles of beer on the wall."
+  def sing_song(num)
+    num.downto(0) do |number|
+      binding.pry
+      if number > 1 ? puts(main_verses(number)) : puts(final_verse)
+      end
+    end
+    nil
+  end
+
+  def main_verses(number)
+    "#{number} bottles of beer on the wall, #{number} bottles of beer.\nTake one down and pass it around, #{number - 1} bottles of beer on the wall."
   end
 
   def final_verse
     "1 bottle of beer on the wall, 1 bottle of beer.\nTake one down and pass it around, no more bottles of beer on the wall.\nNo more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall."
   end
-  # binding.pry
 end
-
- 
